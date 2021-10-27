@@ -19,11 +19,15 @@ By the end of the course, students will be able to ...
 3. Execute testing and debugging strategies specific to iOS games.
 4. Integrate native game engines into an iOS project.
 
-**Course Dates:** Tuesday, June 2 – Thursday, July 16, 2020 (7 weeks)
+**Course Dates:** Monday, Oct 18 – Friday, Dec 10 (8 weeks)
 
-**Class Times:** Tuesday and Thursday at 2:30–5:20pm (14 class sessions)
+**Class Times:** Monday, Wednesday, and Friday at 1:30–3:20pm (24 class sessions)
 
-| Class |          Date          |                 Topics                  |
+Course schedule can be found in the [course syllabus]
+
+[course syllabus]: https://docs.google.com/spreadsheets/d/13tqJl08bHOmoOWwiI-iq5pa4e2NPu4wo8Mwh70YemcU/edit#gid=0
+
+<!-- | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
 |  1 |   Tue, June 2              | [Game Design]                        |
 |  2 |   Thu, June 4              | [Intro to iOS Game Development]      |
@@ -51,7 +55,7 @@ By the end of the course, students will be able to ...
 [SceneKit - a preview]: Lessons/08-SceneKit/Lesson.md
 [Project Specs]: Assignments/Project.md
 [GameKit + Lab]: Lessons/09-GameKit/Lesson.md
-[Stacks game]: https://www.makeschool.com/academy/track/stacks-ios-tutorial-ikq
+[Stacks game]: https://www.makeschool.com/academy/track/stacks-ios-tutorial-ikq -->
 
 ## Class Assignments
 
