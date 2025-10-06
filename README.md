@@ -1,4 +1,4 @@
-# MOB-2.2 - Game Development
+# ACS 3420 - iOS Game Development
 
 ## Course Description
 
@@ -61,8 +61,12 @@ Course schedule can be found in the [course syllabus]
 
 ### Tutorials
 
-- [Hoppy Bunny](https://www.makeschool.com/academy/track/build-hoppy-bunny-with-spritekit-in-swift)
-- [Stacks](https://www.makeschool.com/academy/track/stacks-ios-tutorial-ikq)
+- [Hoppy Bunny](https://github.com/Tech-at-DU/Hoppy-Bunny-SpriteKit-Swift3-V2)
+- [Sushi Neko](https://github.com/Tech-at-DU/Sushi-Neko-SpriteKit-Swift4)
+- [Orange Tree](https://github.com/Tech-at-DU/Orange-Tree-SpriteKit-Swift4)
+
+<!-- - [Game of Life](https://github.com/Tech-at-DU/Game-Of-Life-SpriteKit-Swift3) -->
+<!-- - [Stacks](https://www.makeschool.com/academy/track/stacks-ios-tutorial-ikq) -->
 
 ### Projects
 
