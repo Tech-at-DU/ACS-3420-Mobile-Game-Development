@@ -65,6 +65,8 @@ Course schedule can be found in the [course syllabus]
 - [Sushi Neko](https://github.com/Tech-at-DU/Sushi-Neko-SpriteKit-Swift4)
 - [Orange Tree](https://github.com/Tech-at-DU/Orange-Tree-SpriteKit-Swift4)
 
+- SpriteKit Square Bird https://github.com/Tech-at-DU/SquareBird-Clone-Swift5 
+
 <!-- - [Game of Life](https://github.com/Tech-at-DU/Game-Of-Life-SpriteKit-Swift3) -->
 <!-- - [Stacks](https://www.makeschool.com/academy/track/stacks-ios-tutorial-ikq) -->
 
