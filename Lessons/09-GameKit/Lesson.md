@@ -1,128 +1,68 @@
-<!-- .slide: class="header" -->
-
-# GameKit
-
-## [Slides](https://make-school-courses.github.io/MOB-2.2-Game-Development/Slides/09-GameKit/Lesson.html ':ignore')
-
-<!-- > -->
-
-## Agenda
-
-- GameKit
-- GameCenter
-- Resources
-
-<!-- > -->
+# Lesson 9: GameKit
 
 ## Learning Objectives
 
 - Describe how social games impact engagement.
-- Identify the tools available with GameKit & GameCenter.
+- Identify the tools available with GameKit & Game Center.
 - Locate useful resources for implementing a social game.
 
-<!-- > -->
+## Social Games
 
-## Social games
+There are many different game genres, each with something that makes it great for a different audience. Games are inherently a social activity. Sometimes that social interaction is part of the game itself — competitive or cooperative multiplayer — but even for single-player experiences, players like to see and share their accomplishments.
 
-We've talked about how there are many different game genres. And each has something that makes them great for different audiences.
-
-Games are inherently a social activity.
-
-Sometimes, this social interaction is part of the game itself, such as when the game provides competitive or cooperative multiplayer gameplay. But even for games intended for single-player experiences, players like to see and share their accomplishments.
-
-<!-- v -->
-
-Social games can range from a wide variety of techniques:
+Social games can range across a variety of techniques:
 
 - Leaderboards
 - Achievements
 - Matchmaking challenges
 
-<!-- > -->
-
 ## GameKit
 
-GameKit offers features that you can use to create great social games.
+GameKit offers features you can use to create social games — the ability to create apps that let players interact with each other:
 
-GameKit provides you with the ability to create apps that **allow players to interact with each other**.
-
-<!-- v -->
-
-- **Real-time network matches**: Players can invite other players to join their game. They can receive invitations to join a match even when your game is not running.
-- **Turn-Based Gaming**: Store-and-forward network match infrastructure where the match is played out over a series of turns. Can be played without requiring all of the players to be connected simultaneously.
+- **Real-time network matches** — players can invite others to join their game, and can receive invitations even when your game isn't running.
+- **Turn-based gaming** — a store-and-forward network match infrastructure where the match plays out over a series of turns, without requiring all players connected simultaneously.
 - **Game Center** 🏆
-
-<!-- > -->
 
 ## Game Center
 
-Centralized game service that connects players to each other.
+A centralized game service that connects players to each other.
 
-- **Achievements**: ability to track a player’s accomplishments in the game.
-- **Leaderboards**: allow the game to store and fetch player scores from Game Center.
-- **Challenges**: allow a player to challenge other players to complete an achievement or to beat a leaderboard score.
-
-<!-- v -->
+- **Achievements** — track a player's accomplishments in the game.
+- **Leaderboards** — store and fetch player scores from Game Center.
+- **Challenges** — let a player challenge others to complete an achievement or beat a leaderboard score.
 
 ![gamecenter](assets/gamecenter.png)
 
-<aside class="notes">
-Each player performs different activities but all of them are interacting with Game Center:
+A few examples of how different players interact with Game Center: viewing scores earned in a game (both their own and other players'); a game with achievements sending a message to Game Center to update quest progress; games using Game Center's matchmaking to find and connect players' devices, exchanging data through Game Center's servers; a turn-based game sending a push notification when it's a player's turn.
 
-Bob views his score earned in a game that supports Game Center. The Game Center app shows both Bob’s scores and scores earned by other players.
+## Checkpoint: Explore the Documentation
 
-Joe is playing an adventure game that supports achievements. They just discovered an item for a quest they want to complete. The game sends a message to Game Center to update the progress stored there.
-
-Mary, Alice, and Charlie are playing a game that supports Game Center’s matchmaking. Game Center provides a platform for the player’s devices to find and connect to each other. The game exchanges data between the participants through Game Center’s servers.
-
-Sara plays another multiplayer game also using Game Center’s matchmaking. Sara’s game supports turn-based play and Sara has received a push notification indicating that it is their turn to act.
-</aside>
-
-<!-- > -->
-
-## Documentation
-
-[GameKit documentation](https://developer.apple.com/documentation/gamekit)
-
-Can you find the related classes for:
+Look through the [GameKit documentation](https://developer.apple.com/documentation/gamekit) and find the related classes for:
 - Challenges
 - Achievements
 - Leaderboards
-- Turn based Games
-- Real time matches
-- What is the `GKGameCenterViewController`?
+- Turn-based games
+- Real-time matches
+- What is `GKGameCenterViewController`?
 
-<!-- v -->
+## How to Integrate Game Center
 
-## How to integrate GameCenter?
-
-[GameCenter programming guide](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008304)
-
-The game needs to be Game Center aware:
+See the [Game Center programming guide](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008304). To make a game Game Center-aware you need:
 
 - Authentication
-- Game center assets
-
-<!-- v -->
+- Game Center assets
 
 ![commongame](assets/commongame.png)
-
-<aside class="notes">
-
-
-</aside>
-
-<!-- v -->
-
 ![gamecenteraware](assets/gamecenteraware.png)
 
-<aside class="notes">
+## Checkpoint: Try It
 
-</aside>
-
-<!-- > -->
+Pick one GameKit feature — a leaderboard is the simplest starting point — and wire it into AstroJunk or your final project game. At minimum: authenticate the local player, submit a score, and confirm it shows up in the Game Center sandbox.
 
 ## Tutorial Resources
 
 1. [Ray Wenderlich tutorial](https://www.raywenderlich.com/7544-game-center-for-ios-building-a-turn-based-game)
-1. [Tutorial leaderboard](https://code.tutsplus.com/tutorials/game-center-and-leaderboards-for-your-ios-app--cms-27488)
+2. [Tutorial leaderboard](https://code.tutsplus.com/tutorials/game-center-and-leaderboards-for-your-ios-app--cms-27488)
+
+**Next:** You've now covered every lesson topic. Head to the [Study Guide](../../Assignments/StudyGuide.md) to self-assess, then start the [Final Project](../../Assignments/Project.md).

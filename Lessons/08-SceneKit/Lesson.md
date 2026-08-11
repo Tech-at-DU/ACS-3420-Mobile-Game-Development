@@ -1,19 +1,4 @@
-<!-- .slide: class="header" -->
-
-# SceneKit
-
-## [Slides](https://make-school-courses.github.io/MOB-2.2-Game-Development/Slides/08-SceneKit/Lesson.html ':ignore')
-
-<!-- > -->
-
-## Agenda
-
-- SceneKit
-- Main elements
-- Physics
-- Render Loop
-
-<!-- > -->
+# Lesson 8: SceneKit
 
 ## Learning Objectives
 
@@ -24,76 +9,49 @@
 - Make use of materials
 - Understand how the rendering loop works and use it correctly
 
-<!-- > -->
-
 ## SceneKit
 
 "SceneKit combines a high-performance rendering engine with a descriptive API for import, manipulation, and rendering of **3D assets**."
 
-<!-- v -->
+## Everything Is a Node
 
-## Everything is a node
-
-SceneKit implements content as a **hierarchical tree structure of nodes**, also known as a **scene graph**.
-
-A scene consists of a root node, which defines a coordinate space for the world of the scene, and other nodes that populate the world with visible content.
-
-<!-- v -->
+SceneKit implements content as a **hierarchical tree structure of nodes**, also known as a **scene graph**. A scene consists of a root node, which defines a coordinate space for the world of the scene, and other nodes that populate the world with visible content.
 
 These other nodes are the basic building blocks for the scene:
-- 💡lights
+- 💡 lights
 - 🎥 cameras
-- 🔺geometry
-- particle emitters.
+- 🔺 geometry
+- particle emitters
 
-<!-- v -->
-
-![ndoes](assets/nodes.png)
-
-<!-- v -->
+![nodes](assets/nodes.png)
 
 ## Coordinates
 
-![coordiantes](assets/coordinates.png)
+![coordinates](assets/coordinates.png)
 
-<!-- v -->
+**Class `SCNScene`** — a container for the node hierarchy and global properties that together form a displayable 3D scene.
 
-**Class SCNScene**
-
-A container for the node hierarchy and global properties that together form a displayable 3D scene.
-
-<!-- v -->
-
-**ClassSCNView**
-
-A view for displaying 3D SceneKit content. This one is a subclass of UIView for iOS.
-
-<!-- v -->
+**Class `SCNView`** — a view for displaying 3D SceneKit content, a subclass of `UIView` on iOS.
 
 The `SCNScene` class represents a scene. We display the scene onscreen inside an instance of `SCNView`.
 
-<!-- > -->
+## Getting Started
 
-## Getting started
+1. Create a new SceneKit project. Call it "Shapes."
+2. Build & run. See what appears on screen.
+3. Try dragging around.
 
-1. Create a new SceneKit project. Call it "Shapes".
-1. Build & run. See what appears on screen.
-1. Try dragging around.
+### Exploring the Example
 
-<!-- v -->
+Before writing anything, poke around the template Xcode gave you:
+1. What's going on in `GameViewController.swift`?
+2. What is `art.scnassets`?
+3. What is `ship.scn`?
 
-### Exploring the example
+### A Little Cleanup
 
-1. What's going on in GameViewController.swift?
-1. What is art.scnassets?
-1. What is ship.scn?
-
-<!-- v -->
-
-### A little clean up
-
-1. Remove the art.scnassets folder
-2. Change the content of GameViewController to:
+1. Remove the `art.scnassets` folder.
+2. Change the content of `GameViewController` to:
 
 ```swift
 class GameViewController: UIViewController {
@@ -109,10 +67,8 @@ class GameViewController: UIViewController {
 }
 ```
 
-<!-- v -->
-
-3. Add a property for the view. `var scnView: SCNView!`
-4. Add a method to set it up.
+3. Add a property for the view: `var scnView: SCNView!`
+4. Add a method to set it up:
 
 ```swift
 func setupView() {
@@ -120,9 +76,7 @@ func setupView() {
 }
 ```
 
-<!-- v -->
-
-5. Do the same for the scene. `var scene: SCNScene!`
+5. Do the same for the scene: `var scene: SCNScene!`
 
 ```swift
 func setupScene() {
@@ -131,100 +85,54 @@ func setupScene() {
 }
 ```
 
-6. Call both setups in viewDidLoad.
+6. Call both setup methods in `viewDidLoad`.
 
-<aside class="notes">
-This code creates an instance of SCNScene and stores it in scene. Then sets it as the one the view will use.
-</aside>
+This creates an instance of `SCNScene`, stores it in `scene`, and sets it as the one the view uses. That's the clean starting point — the rest is up to you.
 
-<!-- v -->
+## Checkpoint: Bouncing Shapes
 
-We are done setting up the clean project. Now the rest will be done by you :)
+Follow the [Bouncing Shapes instructions](assets/instructions.md). You'll need the empty-scene project you just set up.
 
-<!-- > -->
+## Scene Statistics
 
-## An Exercise
-
-Follow the instructions [here](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/08-SceneKit/assets/instructions.md). You'll need the project we prepared before to start with an empty scene.
-
-<!-- > -->
-
-## Scene statistics
-
-- **fps**: Frames per second. Measurement of the total amount of consecutive frame redraws done in one-second. The lower, the more poorly the game is performing. Should be around 60fps, to make games look and feel smooth.
-
-- **◆**: Total draw calls per frame. The total amount of visible objects drawn per single frame. Lights affecting objects can increase this number.
-
-- **(triangle)**: Total polygons per frame. Total amount of polygons used to draw a single frame for all the visible geometry.
-
-- **✸**: Total visible light sources. It's recommended to not use more than 3 light sources at a time.
-
-<!-- v -->
+- **fps**: frames per second — the total number of consecutive frame redraws per second. The lower, the more poorly the game is performing. Aim for around 60fps for smooth-looking games.
+- **◆**: total draw calls per frame — the number of visible objects drawn per frame. Lights affecting objects can increase this number.
+- **(triangle)**: total polygons per frame — the total polygons used to draw a single frame across all visible geometry.
+- **✸**: total visible light sources — recommended to stay under 3 at a time.
 
 ![stats](assets/stats.png)
 
-**Frame time**: Total amount of time it took to draw a single frame. A frame
-time of 16.7ms is required to achieve a frame rate of 60fps.
+**Frame time**: the total time it took to draw a single frame. A frame time of 16.7ms is required for 60fps. **The color chart**: frame time percentage breakdown per component.
 
-**The color chart**: Frame time percentage breakdown per component.
+## Checkpoint: Handle All Shapes
 
-<!-- > -->
-
-## Challenge
-
-Right now we have a switch statement that does the same for all the cases, no matter what the random number is.
-
-Improve it to handle all the shapes in the enum.
-
-You'll need to know what are the parameters needed to initialize all the geometric shapes. You can get help from SceneKit's documentation.
-
-[Documentation to see all the shaped with their measurements](https://developer.apple.com/documentation/scenekit/scngeometry)
-
-<!-- > -->
+Right now a switch statement does the same thing for every case, no matter the random value. Improve it to handle all the shapes in the `ShapeType` enum. You'll need to know the parameters required to initialize each geometric shape — check [SceneKit's geometry documentation](https://developer.apple.com/documentation/scenekit/scngeometry).
 
 ## Physics
 
-We use physics bodies like in SpriteKit.
+Physics bodies work similarly to SpriteKit. A physics body describes all the physical properties of a node: **shape, mass, friction, damping, and restitution**. The physics engine uses this to simulate real-world physics interactions — gravity, friction, and collisions with other bodies.
 
-A physics body describes all the physical properties of a node: **shape, mass, friction, damping and restitution.**
+### Body Types
 
-The physics engine takes all this information into account when it simulates the real- world physics interactions of the objects. This includes things like gravity, friction and collisions with other bodies.
+- **Static** — doesn't move, unaffected by forces.
+- **Dynamic** — moved by the physics engine in response to forces/collisions.
+- **Kinematic** — not automatically moved by the physics engine in response to forces/collisions.
 
-<!-- v -->
-
-### Body types
-
-- **Static**: Don't move, unaffected by forces.
-- **Dynamic**: Moved by the physics engine in response to forces/collisions.
-- **Kinematic**: Not automatically moved by the physics engine in response to forces/collisions.
-
-<!-- v -->
-
-### Adding a physics body
+### Adding a Physics Body
 
 ```swift
 geometryNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
 ```
 
-If we pass in nil for the physics shape, SceneKit will automatically generate a shape based on the visual geometry of the node.
+Passing `nil` for the physics shape tells SceneKit to auto-generate a shape based on the node's visual geometry. Build and run.
 
-Build and run.
+### Applying Forces
 
-<!-- v -->
+```swift
+applyForce(direction: at: asImpulse:)
+```
 
-### Applying forces
-
-`applyForce(direction: at: asImpulse:)`
-
-Pass in an instance of `SCNVector3` for both the force and the position where we want to apply that force, and whether the force should be applied as an impulse.
-
-An **impulse** applies the force **only once** to the physics body.
-
-Forces that aren’t impulses are applied **at each step in the physics simulation**.
-
-SceneKit will add up all applied forces on the object and accelerate the physics body according to the net result of those forces.
-
-<!-- v -->
+Pass an `SCNVector3` for both the force and the position where you want to apply it, and whether the force should be applied as an impulse. An **impulse** applies the force **only once**. Forces that aren't impulses are applied **at each step in the physics simulation** — SceneKit adds up all applied forces on the object and accelerates the body according to the net result.
 
 ```swift
 let randomX = Float.random(in: -2...2)
@@ -234,27 +142,23 @@ let position = SCNVector3(x: 0.05, y: 0.05, z: 0.05)
 geometryNode.physicsBody?.applyForce(force, at: position, asImpulse: true)
 ```
 
-Build and run
+Build and run.
 
-<!-- v -->
+## Checkpoint: Bouncing Shapes, Part 2
 
-## An Exercise
+Follow the [Bouncing Shapes Part 2 instructions](assets/instructions2.md), continuing with the project you've been using so far. This covers giving shapes materials/color, the SceneKit render loop and its `SCNSceneRendererDelegate`, and spawning/removing shapes over time.
 
-Follow the instructions [here](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/08-SceneKit/assets/instructions2.md). You'll need the project have been using so far.
+## After This Lesson
 
-<!-- > -->
-
-## After Class
-
-1. Find out about the other force that can be applied to shapes: **Torque**. What's a good use case for it?
-
-<!-- > -->
+Find out about **torque**, the other force that can be applied to shapes. What's a good use case for it?
 
 ## Additional Resources
 
 1. [Scenes and nodes](https://developer.apple.com/documentation/scenekit/organizing_a_scene_with_nodes)
-1. [Scenekit](https://developer.apple.com/documentation/scenekit)
-1. [SCNScene](https://developer.apple.com/documentation/scenekit/scnscene)
-1. [Render Loop](https://developer.apple.com/documentation/scenekit/scnscenerendererdelegate)
-1. [How to make a game like Stack](https://www.raywenderlich.com/670-how-to-make-a-game-like-stack)
-1. 3D Apple Games by Tutorials (book)
+2. [SceneKit](https://developer.apple.com/documentation/scenekit)
+3. [SCNScene](https://developer.apple.com/documentation/scenekit/scnscene)
+4. [Render Loop](https://developer.apple.com/documentation/scenekit/scnscenerendererdelegate)
+5. [How to make a game like Stack](https://www.raywenderlich.com/670-how-to-make-a-game-like-stack)
+6. 3D Apple Games by Tutorials (book)
+
+**Next:** [Lesson 9 - GameKit](../09-GameKit/Lesson.md)

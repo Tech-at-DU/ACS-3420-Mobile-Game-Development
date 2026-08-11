@@ -1,51 +1,20 @@
-<!-- .slide: class="header" -->
-
-# Cameras
-
-## [Slides](https://make-school-courses.github.io/MOB-2.2-Game-Development/Slides/07-Cameras/Lesson.html ':ignore')
-
-<!-- > -->
-
-## Agenda
-
-- Moving backgrounds
-- Cameras
-- Refactor
-
-<!-- > -->
+# Lesson 7: Cameras
 
 ## Learning Objectives
 
-- Implement cameras using SKCameraNode
+- Implement cameras using `SKCameraNode`
 - Create a moving background
 - Identify different ways of creating moving backgrounds
 - Practice refactoring old code
 
-<!-- > -->
-
 ## Moving Background
 
-<img data-src="https://www.sessions.edu/wp-content/uploads/parallax-mario.gif">
+Up to now AstroJunk has a static background image, if you chose that approach — it stays the same throughout the entire game. Many games use a moving background to give the player a sense of real movement, similar to how side-scrolling platformers scroll the background opposite the player's motion to reinforce a feeling of speed.
 
-<aside class="notes">
-Up to now our game has a nice image as background, if you decided to take this path. The image is static and remains the same throughout the entire game.
+## How To?
 
-Many games use a moving background to add a better look to the game, to give the user a sense of real movement.
-
-In the example: as Mario moves to the right, we could think of the background moving to the left.
-</aside>
-
-<!-- > -->
-
-## How to?
-
-- **Moving the background**
-  Make all nodes in the scene that should move, children of the background layer. Then, to scroll the game, you can simply move the background layer from right to left, and its children will move with it.
-
-- **Moving the camera**
-   Use SpriteKit’s `SKCameraNode` class. We add a camera node to the scene, and the camera node’s position represents the center of the current view.
-
-<!-- > -->
+- **Moving the background** — make all nodes in the scene that should move children of a background layer. Then, to scroll the game, move the background layer, and its children move with it.
+- **Moving the camera** — use SpriteKit's `SKCameraNode` class. Add a camera node to the scene; the camera node's position represents the center of the current view.
 
 ## SKCameraNode
 
@@ -58,13 +27,9 @@ camera = cameraNode
 cameraNode.position = CGPoint(x: size.width/2, y: size.height/2)
 ```
 
-<aside class="notes">
-Creating the instance of the camera node would go in didMove.
-</aside
+Create the camera node instance in `didMove(to:)`.
 
-<!-- v -->
-
-We want the camera to move from bottom to top.
+We want the camera to move from bottom to top:
 
 ```swift
 let cameraMovePointsPerSec: CGFloat = 0.6
@@ -74,16 +39,9 @@ func moveCamera() {
 }
 ```
 
-We would call this in `update`. Try running at this point.
+Call this in `update`. Try running at this point — you'll see everything start moving down, and end up with a black screen once all nodes go offscreen. That's expected; we'll fix it below.
 
-What happens?
-<!--
-Everything starts moving down. And we end up with a black screen once all nodes go off screen.
--->
-
-<!-- > -->
-
-### Creating the background node
+### Creating the Background Node
 
 ```swift
 func backgroundNode() -> SKSpriteNode {
@@ -109,9 +67,7 @@ func backgroundNode() -> SKSpriteNode {
 }
 ```
 
-<!-- v -->
-
-An easy way to achieve the effect is to have the background split into different images and then as an image goes off screen, we reposition the image to the end of the image sequence.
+An easy way to achieve a scrolling effect: split the background into different images, and as one goes offscreen, reposition it to the end of the sequence.
 
 ```swift
 for i in 0...1 {
@@ -124,11 +80,7 @@ for i in 0...1 {
 }
 ```
 
-<aside class="notes">
-This wraps the code in a for loop that creates two copies of the background and then sets their positions, so the second copy begins after the first ends..
-</aside>
-
-<!-- > -->
+This creates two copies of the background and sets their positions so the second copy begins where the first ends.
 
 ```swift
 var playableRect: CGRect
@@ -143,14 +95,9 @@ override init(size: CGSize) {
 }
 ```
 
-<aside class="notes">
-These are helper properties that will help to calculate the visible area.
-</aside>
-
-<!-- > -->
+These helper properties calculate the visible area.
 
 ```swift
-
 enumerateChildNodes(withName: "background") { node, _ in
   let background = node as! SKSpriteNode
   if background.position.y + background.size.height <
@@ -161,63 +108,32 @@ enumerateChildNodes(withName: "background") { node, _ in
 }
 ```
 
-<aside class="notes">
-For each background node, we check if the top side of the background is less than the limit of current visible playable area (if it’s offscreen).
+For each background node, check whether its top edge is below the current visible playable area (i.e., offscreen). If so, move it up by double its height — placing it above the other visible background node. This code goes at the end of `moveCamera()`.
 
-If it is, we move the background node to the top by double the height of the background. This will be to the top of the other background node that's visible. This code would go at the end of moveCamera()
-</aside>
+## Checkpoint: Run It
 
-<!-- > -->
+Try running the game now — you should have a moving background, though the scrolling may look rough, and all other nodes (ship, debris, meteorites) will go offscreen.
 
-## Current status
-
-Try running the game now.
-
-What happens?
-
-<!--
-We have a moving background!
-The image is not scrolling friendly
-All other nodes(ship, debris and meteorites) go off screen
--->
-
-<!-- > -->
-
-## Fixing all nodes
+## Fixing All Nodes
 
 ```swift
 ship.position.y = cameraNode.position.y - 200
 ```
-We need the ship to be onscreen always, we can achieve that by having its position depend on the camera node.
 
-The same principle can be applied to the rest of the elements on screen.
+The ship needs to stay onscreen — make its position depend on the camera node's position. Apply the same principle to the rest of the elements onscreen.
 
-<!-- > -->
+## Other Alternatives
 
-## Other alternatives
-
-Particle emitters for nodes.
+Particle emitters can also be used for scrolling background effects:
 
 ![background](assets/backgroundemitter.gif)
 
-<aside class="notes">
-Can you think about ways to achieve a parallax effect?
-</aside>
+Think about other ways you could achieve a parallax effect (multiple background layers scrolling at different speeds, for example).
 
-<!-- > -->
+## Checkpoint: Refactor
 
-## Refactoring
+You've likely put a lot of code directly in `GameScene` by now — not the preferred practice. Refactor AstroJunk so its code is modular and easy to navigate: split responsibilities into separate files/classes (movement, spawning, scoring, background scrolling, etc.) rather than one large scene file.
 
-We've been doing a lot of our code in the GameScene. As you know this is not the preferred practice.
+This is the finishing touch on the core AstroJunk build from Lessons 1-7. From here, later lessons (Physics, SceneKit, GameKit) stand more on their own, and you'll move toward designing your own original game for the [final project](../../Assignments/Project.md).
 
-Refactor your code so that it becomes modular and easy to navigate.
-
-This will be the finishing touch to our in-class game. Then you're done 😎
-
-<!-- > -->
-
-## After Class
-
-- Submit the link to the project in the tracker.
-
-This entry will determine your mid term grade. (EOW)
+**Next:** [Lesson 8 - SceneKit](../08-SceneKit/Lesson.md)

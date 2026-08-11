@@ -1,53 +1,45 @@
-# Study Guide for MOB 2.2 Final Assessment
-*Overview:* Your final exam will focus on the learning outcomes for this course.  Review each outcome thoroughly and ask questions if you are unclear about the outcome or your level of understanding.
+# Self-Assessment Guide
 
-*Final Exam Format:* Your final exam will be on December 11.  It will be a written exam and you'll have 2 hours to complete it.  If you have a disability that requires any accommodation for the final exam, please reach out to Jen or Anne to make sure this is documented according to the Make School Accommodations Policy and clarify with your instructor what accommodations will be made.
+*Overview:* There's no proctored final exam in this independent study. Instead, use this guide to review each of the course's learning outcomes and honestly assess your own understanding. Where you're unsure, go back and reread the relevant lesson, or rebuild the relevant piece of AstroJunk from scratch without looking at your old code — that's usually the fastest way to find out if a concept actually stuck.
 
-**Outcome 1: Build game projects using Xcode, Swift, SpriteKit.**
+Work through this before starting the [final project](Project.md) — the project will exercise every outcome below, so gaps you find now are cheaper to fix than gaps you find mid-project.
 
-Ways we learned about this in the course
-- Over a span of several lessons we built a game in SpriteKit covering:
-  - Nodes
-  - Actions
-  - Touch events
-  - Collisions
-  - Game mechanic
-  - Working with cameras
-  - Juice (particles, sound, labels)
+## Outcome 1: Build game projects using Xcode, Swift, SpriteKit
 
-Ways you can demonstrate your skill / knowledge level of this outcome
-- Identify the main elements needed to build a game with SpriteKit.
-- Describe different methods to add "juice" to a game.
+Covered in Lessons 1, 2, 4, 5, and 7, building AstroJunk across nodes, actions, touch events, collisions, scenes, and juice (particles, sound, labels).
 
-**Outcome 2: Identify trade offs of different gaming architectures and select the best fit for a game.**
+Check your understanding — can you, without referencing the lessons:
+- Explain the main elements needed to build a game with SpriteKit (nodes, scenes, actions, physics bodies)?
+- Describe at least three different ways to add "juice" to a game, and why each one matters for game feel?
+- Explain the difference between moving a node manually (setting `position` each frame) versus using `SKAction`?
 
-Ways we learned about this in the course
-- Class 8 covered architecting a game
+## Outcome 2: Identify trade-offs of different gaming architectures and select the best fit for a game
 
-Ways you can demonstrate your skill / knowledge level of this outcome
-- Describe different architectures that can be applied to gaming projects.
+Covered in Lesson 3.
 
-**Outcome 3: Execute debugging strategies specific to iOS games**
+Check your understanding:
+- Can you describe the inheritance-based, component-based, and state machine architectures, and give a scenario where each is the better fit?
+- Could you explain, to someone unfamiliar with the topic, why component-based architecture tends to scale better than deep inheritance hierarchies?
 
-Ways we learned about this in the course
-- Debugging the in class game & your own project during labs.
-- Using the physics body outlines.
-- Reading metrics on screen: fps, number of nodes, number of light sources, etc.
+## Outcome 3: Execute testing and debugging strategies specific to iOS games
 
-Ways you can demonstrate your skill / knowledge level of this outcome
-- Identify the importance of knowing certain information at runtime.
-- Relationship between fps and nodes.
+Covered through the debugging habits built into every lesson's checkpoints, and explicitly in Lesson 6 (Physics) and Lesson 8 (SceneKit).
 
-**Outcome 4: Integrate native game engines into an iOS project.**
+Check your understanding:
+- Can you explain why knowing certain information at runtime (FPS, node count, physics body outlines) matters for debugging a game specifically, as opposed to a typical app?
+- Can you describe the relationship between FPS and the number of active nodes in a scene?
+- Have you actually used `showsFPS`, `showsNodeCount`, and `showsPhysics` on a real project, and interpreted what they told you?
 
-Ways we learned about this in the course
-- Used SpriteKit + Physics
-- Used SceneKit at an introductory level + Physics
-- State machines
-- Introductory GameKit
+## Outcome 4: Integrate native game engines into an iOS project
 
-Ways you can demonstrate your skill / knowledge level of this outcome
-- Understand how Physics works with SpriteKit (physics bodies and masks)
-- Identify the purpose of state machines delegate methods.
-- Know what can be added to a game using GameKit.
-- Know similarities and differences between SpriteKit & SceneKit
+Covered in Lesson 6 (Physics), Lesson 8 (SceneKit), and Lesson 9 (GameKit).
+
+Check your understanding:
+- Can you explain how physics works in SpriteKit — physics bodies, category/collision/contact bit masks?
+- Can you identify the purpose of state machine delegate methods (from Lesson 3's GameplayKit example)?
+- Do you know what GameKit/Game Center adds to a game (leaderboards, achievements, matchmaking)?
+- Can you describe the similarities and differences between SpriteKit and SceneKit?
+
+## If You're Working with an Advisor or Mentor
+
+If this course is part of a formal independent study with an advisor, this guide is a good basis for a check-in conversation — walk through each outcome together and discuss where you feel solid versus shaky, rather than treating it as a written test to pass or fail.

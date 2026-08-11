@@ -1,54 +1,60 @@
-# Custom Game - Final project 👾🎲🧩🎮♟
+# Custom Game - Final Project 👾🎲🧩🎮♟
 
 ## Description
 
-This term we covered topics that gave you the tools needed to build a mobile game. By the end of the term you'll have a working version of a game that not only is visually attractive but is also fun and engages users.
+Over this course you've covered the topics needed to build a mobile game: sprites, actions, touch, collisions, architecture, scenes, juice, physics, cameras, and (optionally) SceneKit and GameKit. This project is where it comes together — you'll design, build, and playtest an original iOS game of your own, one that's visually attractive and genuinely fun to play.
 
 ## Learning Outcomes
+
 By completing this project, you should be able to:
 
-1. Implement topics from the course into a mobile game.
-1. Conduct user tests with early versions of the game
-1. Elaborate a Game Design Document to back all of the choices behind the game.
-1. Practice the process of publishing an app to TestFlight (optional)
+1. Apply topics from the course in an original mobile game.
+2. Conduct a user test with an early version of the game and act on the feedback.
+3. Write a Game Design Document that backs up the choices behind the game.
+4. Practice the process of publishing an app to TestFlight (optional).
 
-## Schedule
+## Suggested Schedule
 
-**INSTRUCTOR NOTE:**
+Plan on roughly **2-3 weeks** for this project, worked at a pace similar to the rest of the course. A reasonable breakdown:
 
-From the day this project is assigned, you will have **2 weeks** to complete this project.
+- **Days 1-2** — Read this spec, decide on your game concept, finish the Game Design Document.
+- **Days 3-6** — Build the core architecture: get nodes on screen and core mechanics working.
+- **Days 7-8** — Conduct at least one user test; adjust the game based on feedback.
+- **Days 9-11** — Once the game is functional, add juice (sound, particles, polish).
+- **Days 12-14** — Fix remaining bugs, optionally upload to TestFlight, and do a final self-review against the requirements below.
 
-**Sample project plan:**
-  - Project assigned, read the project spec, ask any clarifying questions you may have, finish the game design document.
-  - Main architecture of the game is done. Starting to add some nodes and core mechanics.
-  - Conduct at least one user testing. Adjust the game with feedback.
-  - When the game is functional add some juice.
-  - Fix any remaining bugs, upload to Testflight and prepare presentation.
-  - Presentation Day, submit links to tracker.
+Adjust this to your own pace — the point is to keep momentum and get a playable version in front of a tester early, rather than polishing in isolation until the end.
 
 ## Requirements
-List out requirements for the project here
 
-1. Make a copy of [this Game Design Document](https://docs.google.com/document/d/1UFk13rphKvorY6J1cHzjtYbisrTTfFXBCSwxV3BR1nA/edit?usp=sharing) and fill it our with the content of your game (skip the Assets section).
-1. Evidence of at least one user testing session to get feedback (can be notes, video, before and after screenshots). Add this to the Game Design document.
-1. Functional Game with SpriteKit that includes at least 6 of the following:
-  - Core mechanics (not optional)
-  - Collision detection
-  - Physics
-  - Textures
-  - Sounds
-  - Moving background or parallax effect
-  - Particle emitters
-  - Scoring system
-  - Displaying messages or useful game data
-1. Game uploaded to Testflight
+1. Make a copy of [this Game Design Document](https://docs.google.com/document/d/1UFk13rphKvorY6J1cHzjtYbisrTTfFXBCSwxV3BR1nA/edit?usp=sharing) and fill it out with your game's content (skip the Assets section).
+2. Evidence of at least one user testing session to get feedback — notes, video, or before/after screenshots are all fine. Add this to the Game Design Document. If you don't have a classmate or cohort to test with, a friend, family member, or anyone willing to play for a few minutes and give honest reactions works.
+3. A functional game built with SpriteKit that includes at least 6 of the following:
+   - Core mechanics (not optional — every game needs this)
+   - Collision detection
+   - Physics
+   - Textures
+   - Sounds
+   - Moving background or parallax effect
+   - Particle emitters
+   - Scoring system
+   - Displaying messages or useful game data
+4. Game uploaded to TestFlight (optional, but strongly recommended if you want real-device playtesting or plan to eventually ship this).
 
-## Rubric
+## Self-Review Checklist
 
-Link to project rubric placed here
+There's no instructor-assigned rubric for an independent study — use this checklist to confirm you've met the requirements before considering the project done:
 
-## Past student projects
+- [ ] Game Design Document is complete (concept, mechanics, one user-testing entry)
+- [ ] Game runs without crashing through a full play session (start → play → game over)
+- [ ] At least 6 of the 8 listed features are implemented and demonstrably working
+- [ ] You've addressed at least one piece of feedback from your user test
+- [ ] Code is organized (no single mega-file holding all game logic — see the architecture and refactoring checkpoints in Lessons 3 and 7)
+- [ ] (Optional) Build uploaded to TestFlight and installable on a real device
+
+## Past Student Projects
+
+For inspiration — examples of what past students built for this same assignment:
 
 - [Project Detritus](https://github.com/WesleyEspinoza/Project-Detritus)
 - [Ocean Cleanup](https://github.com/RicardoR22/Ocean-Cleanup)
-- [Spacemath](SpaceMath)
