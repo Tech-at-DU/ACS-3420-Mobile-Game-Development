@@ -27,36 +27,6 @@ Course schedule can be found in the [course syllabus]
 
 [course syllabus]: https://docs.google.com/spreadsheets/d/13tqJl08bHOmoOWwiI-iq5pa4e2NPu4wo8Mwh70YemcU/edit#gid=0
 
-<!-- | Class |          Date          |                 Topics                  |
-|:-----:|:----------------------:|:---------------------------------------:|
-|  1 |   Tue, June 2              | [Game Design]                        |
-|  2 |   Thu, June 4              | [Intro to iOS Game Development]      |
-|  3 |   Tue, June 9              | [Actions, Touch events, Collisions]  |
-|  4 |   Thu, June 11             | [Scenes]                             |
-|  5 |   Tue, June 16             | [Adding Juice]                       |
-|  6 |   Thu, June 18             | [Physics]                            |
-|  7 |   Tue, June 23             | [Stacks game]                        |
-|  8 |   Thu, June 25             | [Selecting an Architecture]          |
-|  9 |   Tue, June 30             | [Project Specs]                      |
-| 10 |   Thu, July 2              | [Project Lab]                        |  
-| 11 |   Tue, July 7              | [SceneKit - a preview]               |
-| 12 |   Thu, July 9              | [GameKit + Lab]                      |
-| 14 |   Tue, July 14             | Final Exam                           |
-| 15 |   Thu, July 16             | Presentations                        |
-
-[Game Design]: Lessons/Game-Design/Readme.md
-[Intro to iOS Game Development]: Lessons/01-Intro-iOS-Game-Development/Lesson1.md
-[Actions, Touch events, Collisions]: Lessons/02-Actions/Lesson2.md
-[Selecting an Architecture]: Lessons/03-Selecting-an-Architecture/Lesson3.md
-[Scenes]: Lessons/04-Working-with-Scenes/Lesson4.md
-[Adding Juice]: Lessons/05-Juice/Lesson5.md
-[Physics]: Lessons/06-Physics/Lesson.md
-[Cameras]: Lessons/07-Cameras/Lesson.md
-[SceneKit - a preview]: Lessons/08-SceneKit/Lesson.md
-[Project Specs]: Assignments/Project.md
-[GameKit + Lab]: Lessons/09-GameKit/Lesson.md
-[Stacks game]: https://www.makeschool.com/academy/track/stacks-ios-tutorial-ikq -->
-
 ## Class Assignments
 
 ### Tutorials
@@ -66,9 +36,6 @@ Course schedule can be found in the [course syllabus]
 - [Orange Tree](https://github.com/Tech-at-DU/Orange-Tree-SpriteKit-Swift4)
 
 - SpriteKit Square Bird https://github.com/Tech-at-DU/SquareBird-Clone-Swift5 
-
-<!-- - [Game of Life](https://github.com/Tech-at-DU/Game-Of-Life-SpriteKit-Swift3) -->
-<!-- - [Stacks](https://www.makeschool.com/academy/track/stacks-ios-tutorial-ikq) -->
 
 ### Projects
 
