@@ -40,10 +40,12 @@ Each lesson builds on the last — work through them in order. Lessons 1-4 build
 | 7 | SpriteKit's physics engine | [Physics](Lessons/06-Physics/Lesson.md) |
 | 8 | Cameras and scrolling backgrounds | [Cameras](Lessons/07-Cameras/Lesson.md) |
 | 9 | 3D with SceneKit (preview) | [SceneKit](Lessons/08-SceneKit/Lesson.md) |
-| 9 | Leaderboards & achievements | [GameKit](Lessons/09-GameKit/Lesson.md) |
-| 10-11 | Design, build, and playtest your own game | [Final Project](Assignments/Project.md) |
+| 10 | Leaderboards & achievements | [GameKit](Lessons/09-GameKit/Lesson.md) |
+| 11-12 | Design, build, and playtest your own game | [Final Project](Assignments/Project.md) |
 
 When you finish all lessons, work through the [Study Guide](Assignments/StudyGuide.md) as a self-assessment before starting the final project.
+
+Track your progress against the [Course Checklist](Assignments/Checklist.md) — it lists every deliverable required to complete the course, lesson by lesson.
 
 ## Class Assignments
 
@@ -64,9 +66,18 @@ Optional but recommended for extra SpriteKit practice outside of the AstroJunk p
 
 There's no proctored exam. To confirm you've met the learning outcomes:
 
-- Complete each lesson's hands-on checkpoints.
+- Complete each lesson's hands-on checkpoints — tracked in the [Course Checklist](Assignments/Checklist.md).
 - Work through the [Study Guide](Assignments/StudyGuide.md) and honestly assess your understanding of each outcome — go back and review any lesson where you're unsure.
 - Design, build, and playtest an original game that satisfies the [Final Project](Assignments/Project.md) requirements.
+
+## What You Need to Pass
+
+To complete this course you must:
+
+- Check off every item in the [Course Checklist](Assignments/Checklist.md) — every lesson checkpoint, the Study Guide self-assessment, and the final project.
+- Deliver a final project that meets all the requirements in [Project.md](Assignments/Project.md), including the Game Design Document, at least one user test, and 6 of the 8 required game features.
+
+There's no attendance policy or seat-time requirement — completion is defined by the checklist, not the calendar.
 
 ## Information Resources
 
