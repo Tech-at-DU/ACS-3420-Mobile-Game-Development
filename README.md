@@ -29,19 +29,22 @@ By the end of the course, you will be able to:
 
 Each lesson builds on the last — work through them in order. Lessons 1-4 build a single running project ("AstroJunk"); after that, each lesson stands more on its own.
 
-| Week | Topic | Lesson |
-|:----:|-------|--------|
-| 1 | Game Design fundamentals | [Game Design](Lessons/Game-Design/Readme.md) |
-| 2 | Intro to SpriteKit: nodes, frames, vectors | [Intro to iOS Game Development](Lessons/01-Intro-iOS-Game-Development/Lesson1.md) |
-| 3 | Actions, collisions, touch events | [Actions, Touch Events, Collisions](Lessons/02-Actions/Lesson2.md) |
-| 4 | Choosing a game architecture | [Selecting an Architecture](Lessons/03-Selecting-an-Architecture/Lesson3.md) |
-| 5 | Scenes, game mechanics, transitions | [Working with Scenes](Lessons/04-Working-with-Scenes/Lesson4.md) |
-| 6 | Sound, music, particle effects | [Adding Juice](Lessons/05-Juice/Lesson5.md) |
-| 7 | SpriteKit's physics engine | [Physics](Lessons/06-Physics/Lesson.md) |
-| 8 | Cameras and scrolling backgrounds | [Cameras](Lessons/07-Cameras/Lesson.md) |
-| 9 | 3D with SceneKit (preview) | [SceneKit](Lessons/08-SceneKit/Lesson.md) |
-| 10 | Leaderboards & achievements | [GameKit](Lessons/09-GameKit/Lesson.md) |
-| 11-12 | Design, build, and playtest your own game | [Final Project](Assignments/Project.md) |
+| Week | Date | Topic | Lesson |
+|:----:|------|-------|--------|
+| 1 | Mon, Aug 24 | Game Design fundamentals | [Game Design](Lessons/Game-Design/Readme.md) |
+| 2 | Wed, Aug 26 | Intro to SpriteKit: nodes, frames, vectors | [Intro to iOS Game Development](Lessons/01-Intro-iOS-Game-Development/Lesson1.md) |
+| 3 | Mon, Aug 31 |Actions, collisions, touch events | [Actions, Touch Events, Collisions](Lessons/02-Actions/Lesson2.md) |
+| 4 | Wed, Sep  2 | Choosing a game architecture | [Selecting an Architecture](Lessons/03-Selecting-an-Architecture/Lesson3.md) |
+| 5 | Mon, Sep  7 | Scenes, game mechanics, transitions | [Working with Scenes](Lessons/04-Working-with-Scenes/Lesson4.md) |
+| 6 | Wed, Sep  9 | Sound, music, particle effects | [Adding Juice](Lessons/05-Juice/Lesson5.md) |
+| 7 | Mon, Sep 14 | SpriteKit's physics engine | [Physics](Lessons/06-Physics/Lesson.md) |
+| 8 | Wed, Sep 16 | Cameras and scrolling backgrounds | [Cameras](Lessons/07-Cameras/Lesson.md) |
+| 9 | Mon, Sep 21 | 3D with SceneKit (preview) | [SceneKit](Lessons/08-SceneKit/Lesson.md) |
+| 10 | Wed, Sep 23 | Leaderboards & achievements | [GameKit](Lessons/09-GameKit/Lesson.md) |
+| 11-12 | Mon, Sep 28 | Design, build, and playtest your own game | [Final Project](Assignments/Project.md) |
+| 12 | Wed, Sep 30 | Research and define your own game | [Final Project](Assignments/Project.md) |
+| 13 | Mon, Oct  5 | Design, build your own game | [Final Project](Assignments/Project.md) |
+| 14 | Wed, Oct  7 | Design, playtest and debug your own game | [Final Project](Assignments/Project.md) |
 
 When you finish all lessons, work through the [Study Guide](Assignments/StudyGuide.md) as a self-assessment before starting the final project.
 
