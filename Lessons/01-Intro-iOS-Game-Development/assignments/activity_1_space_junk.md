@@ -21,22 +21,36 @@ The final released version of the game will have the following characteristics:
 
 <!-- TODO: rewrite this as a User Story? -->
 
+### Setup
+
+1. Xcode → File → New → Project → **iOS → Game** template
+2. Interface: **Storyboard**, Language: **Swift**, Game Technology: **SpriteKit**
+3. Product Name: `AstroJunk`
+4. Delete the placeholder `Spaceship` node/logic Xcode drops into the template's `GameScene.swift`
+5. Drag [these images](../assets/gameAssets.zip) (or your own) into `Assets.xcassets`
+
+### Build it in code, not the Scene Editor
+
+Xcode gives you two ways to place nodes: the `.sks` Scene Editor (drag and drop) or code (`didMove(to:)`). **Use code.** Every later lesson — spawning meteors, subclassing nodes, scrolling backgrounds — assumes your nodes were created in code, and reworking a Scene-Editor setup later costs you more time than it saves now.
+
 ### TODO: For this phase of the game
 
-For this __*first released version*__ of AstroJunk, you are to:
-
-1. Create the basic SpriteKit game app project in Xcode
-
-2. Applying the concepts covered so far, you must also create all sprites/nodes required for the game including:
+Applying the concepts from this lesson (creating a sprite, setting its `position`, `addChild`), create one static instance of each of these in `didMove(to:)`:
 
 - background scene
 - meteorites
 - space debris
 - space ship
 
-At this point, these will be static nodes only, since we have not covered motion yet, none of these sprites need to be able to move at this point...
+Here's the pattern for the ship — repeat it for the other three:
 
-You can go online and search for cool free graphics. Or just use [these](../assets/gameAssets.zip) for now and change them later if you want.
+```swift
+let ship = SKSpriteNode(imageNamed: "spaceship")
+ship.position = CGPoint(x: size.width / 2, y: 100)
+addChild(ship)
+```
+
+These are placeholders to confirm your assets and positioning work — no motion yet. **Heads up:** meteors and debris don't stay single static instances for long. Lesson 2 replaces this one-off placement with a spawner that creates them repeatedly at random positions, so don't over-invest in exact placement here.
 
 ### Example
 

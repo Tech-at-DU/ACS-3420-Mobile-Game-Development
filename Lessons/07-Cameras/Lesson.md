@@ -11,6 +11,8 @@
 
 Up to now AstroJunk has a static background image, if you chose that approach — it stays the same throughout the entire game. Many games use a moving background to give the player a sense of real movement, similar to how side-scrolling platformers scroll the background opposite the player's motion to reinforce a feeling of speed.
 
+**Heads up:** the `backgroundNode()` factory below replaces your Lesson 1 background with two tiled copies that scroll and reposition themselves — it doesn't extend your existing single background node. Delete or stop using that node once this is working.
+
 ## How To?
 
 - **Moving the background** — make all nodes in the scene that should move children of a background layer. Then, to scroll the game, move the background layer, and its children move with it.

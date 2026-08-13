@@ -160,13 +160,30 @@ There are several ways to handle collision detection. One uses SpriteKit's built
 3. Loop over the lists to check for collisions. Each node has a `frame` property representing its location on screen. This frame is a rectangle, so even round sprites have a rectangular bounding box.
 4. With access to the frames, use `CGRect`'s `intersects(_:)` method to check for collisions.
 
+### Scoring
+
+A collision is also the natural place to award points. Add a score variable and an `SKLabelNode` to display it:
+
+```swift
+var score = 0
+let scoreLabel = SKLabelNode(fontNamed: "Arial")
+
+// in didMove(to:)
+scoreLabel.position = CGPoint(x: size.width / 2, y: size.height - 50)
+addChild(scoreLabel)
+
+// wherever a collision awards points
+score += 1
+scoreLabel.text = "Score: \(score)"
+```
+
 ## Checkpoint: Collision Detection in AstroJunk
 
 Next steps for AstroJunk:
 
 - Include collision detection using the frame bounding-box technique.
 - Detect when the ship collides with either meteors or debris.
-- Once the ship collides with objects, make the object disappear from the scene.
+- Once the ship collides with objects, make the object disappear from the scene and update the score.
 - Debug the frame of the objects to make the collision as realistic as possible. (Tip: if the bounding box looks larger than the sprite, shrink it with `insetBy(dx:dy:)`.)
 
 ## Touch Events
