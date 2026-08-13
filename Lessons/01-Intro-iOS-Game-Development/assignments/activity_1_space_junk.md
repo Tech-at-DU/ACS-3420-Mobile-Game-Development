@@ -33,6 +33,39 @@ The final released version of the game will have the following characteristics:
 
 Xcode gives you two ways to place nodes: the `.sks` Scene Editor (drag and drop) or code (`didMove(to:)`). **Use code.** Every later lesson — spawning meteors, subclassing nodes, scrolling backgrounds — assumes your nodes were created in code, and reworking a Scene-Editor setup later costs you more time than it saves now.
 
+### Fix Three Template Defaults First
+
+The Xcode template ships with defaults that cause confusing bugs if you leave them as-is. Fix these before placing any sprites:
+
+1. **Skip loading `GameScene.sks` entirely.** It still has a leftover "Hello, World!" label baked in, and its canvas size (set at design time, often landscape) won't match your device's actual screen — so anything positioned with `size.width/2` can end up in the wrong place. In `GameViewController.swift`, replace the line that loads `SKScene(fileNamed: "GameScene")` with:
+
+   ```swift
+   let scene = GameScene(size: view.bounds.size)
+   scene.scaleMode = .resizeFill
+   view.presentScene(scene)
+   ```
+
+   Now `scene.size` always matches the real screen, on any device.
+
+2. **Set the origin explicitly.** A freshly created `SKScene` defaults to `anchorPoint = (0.5, 0.5)` — `(0, 0)` lands at the *center* of the screen, not the bottom-left shown in the lesson's diagram. Set it in `didMove(to:)` so the rest of the course's positioning math (which assumes bottom-left) works as written:
+
+   ```swift
+   self.anchorPoint = .zero
+   ```
+
+3. **Set `zPosition` on everything.** Unlike UIKit views, two SpriteKit nodes with the same `zPosition` (the default is `0` for every node) don't reliably draw in the order you added them — you can add your background last and still see it appear behind the ship. Give every node an explicit `zPosition`: background furthest back, gameplay elements in the middle, UI on top.
+
+### Asset Reference
+
+`gameAssets.zip` uses non-obvious file names — here's what's in it:
+
+| File | Suggested use |
+|---|---|
+| `playerShip2_red.png` | ship |
+| `meteorBrown_big3.png`, `meteorGrey_med1.png`, `meteorGrey_big4.png` | meteorites |
+| `wingRed_2.png`, `wingGreen_6.png`, `beam0.png` | space debris |
+| `vectorstock_16606572.png` | background |
+
 ### TODO: For this phase of the game
 
 Applying the concepts from this lesson (creating a sprite, setting its `position`, `addChild`), create one static instance of each of these in `didMove(to:)`:
@@ -45,8 +78,9 @@ Applying the concepts from this lesson (creating a sprite, setting its `position
 Here's the pattern for the ship — repeat it for the other three:
 
 ```swift
-let ship = SKSpriteNode(imageNamed: "spaceship")
+let ship = SKSpriteNode(imageNamed: "playerShip2_red")
 ship.position = CGPoint(x: size.width / 2, y: 100)
+ship.zPosition = 1
 addChild(ship)
 ```
 

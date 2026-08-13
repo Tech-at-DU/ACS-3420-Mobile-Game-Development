@@ -57,13 +57,13 @@ public struct CGPoint {
 }
 ```
 
-By default, SpriteKit positions sprites so they are centered at `(0, 0)`, which in SpriteKit represents the bottom left of the screen.
-
-**Important:** Unlike the coordinate systems in UIKit and AppKit, where `0` on the y-axis is at the top-left, in SpriteKit `0` on the y-axis is at the **bottom-left** of the screen:
+**Important:** Unlike the coordinate systems in UIKit and AppKit, where `0` on the y-axis is at the top-left, SpriteKit's y-axis increases **upward**:
 
 ![XandY_in_spritekit](assets/XandY_in_spritekit.png)
 
 *Source: https://hackernoon.com/swift-spritekit-basics-94b1798ab639*
+
+Where `(0, 0)` itself lands on screen depends on the scene's `anchorPoint` — and a freshly created `SKScene` defaults to `anchorPoint = (0.5, 0.5)`, putting the origin at the **center** of the screen, not the bottom-left shown above. The [Space Junk](assignments/activity_1_space_junk.md) setup has you set `anchorPoint = .zero` explicitly, which is what makes `(0, 0)` the bottom-left corner — and what the rest of this course's positioning math assumes.
 
 **Simple example** — creating a sprite and setting its `position` property:
 
